@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #05050a;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at 15% 8%, rgba(139, 92, 246, 0.16), transparent 34rem),
+    radial-gradient(circle at 86% 20%, rgba(56, 189, 248, 0.14), transparent 32rem),
+    #05050a;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(rgba(255, 255, 255, 0.025) 50%, rgba(0, 0, 0, 0.02) 50%);
+  background-size: 100% 4px;
+  opacity: 0.32;
+}
+
+img {
+  content-visibility: auto;
+}
+
+::-webkit-scrollbar {
+  width: 11px;
+}
+
+::-webkit-scrollbar-track {
+  background: #05050a;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 3px solid #05050a;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #8b5cf6, #38bdf8, #a3e635);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.field {
+  width: 100%;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.055);
+  padding: 1rem 1.1rem;
+  color: white;
+  outline: none;
+  transition: border-color 220ms ease, background 220ms ease, box-shadow 220ms ease;
+}
+
+.field::placeholder {
+  color: rgba(255, 255, 255, 0.38);
+}
+
+.field:focus {
+  border-color: rgba(103, 232, 249, 0.55);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.11), 0 0 32px rgba(56, 189, 248, 0.13);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+@media (max-width: 768px) {
+  body::before {
+    display: none;
+  }
+
+  .backdrop-blur-xl,
+  .backdrop-blur-2xl {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .shadow-neon,
+  .shadow-violet {
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.14);
+  }
+}
